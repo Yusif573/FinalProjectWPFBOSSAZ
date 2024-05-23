@@ -1,0 +1,171 @@
+﻿<Page x:Class="FinalProject.MVVM.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject.MVVM.Views"
+        xmlns:viewModel="clr-namespace:FinalProject.MVVM.ViewModels"
+        Background="Transparent"
+        ShowsNavigationUI="False"
+        mc:Ignorable="d"
+        d:DesignHeight="600" d:DesignWidth="920"
+        Width="920" Height="600"
+        >
+
+
+    <Page.DataContext>
+        <viewModel:MainViewModel/>
+    </Page.DataContext>
+
+    <Border Background="#272537"
+        CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                   Text="BOSS AZ"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   FontSize="22"
+                   Margin="20,0,0,0"
+                   />
+
+            <StackPanel Grid.Row="1" >
+                <RadioButton
+                    Content="Home"
+                    Foreground="White"
+                    FontSize="14"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTemplate}"
+                    IsChecked="True"
+                    Command="{Binding HomeViewCommand}"
+                    />
+                <RadioButton
+                    Content="All Workers"
+                    Foreground="White"
+                    FontSize="14"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTemplate}"
+                    Command="{Binding AllWorkersViewCommand}"
+                    />
+                <RadioButton x:Name="allVacancies"
+                    Content="All Vacancies"
+                    Foreground="White"
+                    FontSize="14"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTemplate}"
+                    Command="{Binding AllVacanciesViewCommand}"
+                    />
+                <RadioButton x:Name="createVacancy"
+                    Content="Create Vacancy"
+                    Foreground="White"
+                    FontSize="14"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTemplate}"
+                    Command="{Binding CreateVacancyViewCommand}"
+                    />
+                <RadioButton x:Name="myVacancies"
+                    Content="My Vacancies"
+                    Foreground="White"
+                    FontSize="14"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTemplate}"
+                    Command="{Binding MyVacanciesViewCommand}"
+                    />
+                <RadioButton x:Name="createCV"
+                    Content="Create CV"
+                    Foreground="White"
+                    FontSize="14"
+                    Height="50"
+                    Style="{StaticResource MenuButtonTemplate}"
+                    Command="{Binding CreateCVViewCommand}"
+                    />
+                <RadioButton x:Name="editProfile"
+                    Content="Edit Profile"
+                    Foreground="White"
+                    FontSize="14"
+                    Height="50"
+                             Click="editProfile_Click"
+                    Style="{StaticResource MenuButtonTemplate}"
+                    Command="{Binding editProfileCommand}"
+                    />
+
+            </StackPanel>
+            <TextBox
+                    Grid.Column="1"
+                    Width="250"
+                    Height="40"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Margin="5"
+                    Style="{ StaticResource TextBoxTemplate }"
+                    
+                />
+            <Border     Grid.Column="1" 
+                        
+                        Width="150"
+                        Height="50"
+                        Margin="411,0,0,10"
+                        Background="#34DD"
+                        CornerRadius="10"
+                />
+            <Label Name="labelAccountName" Grid.Column="1" FontSize="20" Foreground="White" Margin="500,6,0,0" />
+            <Image Source="../../Images/user.png" Height="40" Margin="500,0,0,10" Grid.Column="1"/>
+            <Button x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="14"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Right"
+                            Margin="0,5,5,0"
+                            Click="btnClose_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#DA34AE"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#C62DAE"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="28" Height="28"
+                                        CornerRadius="19"
+                                        Background="Purple">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+
+            <ContentControl Grid.Row="1" x:Name="mainContentControl"
+                        Grid.Column="1" 
+                        Margin="10"
+                        Content="{Binding CurrentView}"/>
+
+        </Grid>
+    </Border>
+
+
+</Page>

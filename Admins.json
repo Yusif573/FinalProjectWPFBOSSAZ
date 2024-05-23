@@ -1,0 +1,26 @@
+[
+  {
+    "Salary": 2500,
+    "Name": "Yusif",
+    "Surname": "Veliyev",
+    "BirthDate": "2024-05-23T20:39:46.5282987+04:00",
+    "Email": "a",
+    "Password": "a"
+  },
+  {
+    "Salary": 3000,
+    "Name": "John",
+    "Surname": "Donen",
+    "BirthDate": "2024-05-23T20:39:46.5290565+04:00",
+    "Email": "john.doe@example.com",
+    "Password": "password123"
+  },
+  {
+    "Salary": 2800,
+    "Name": "Alice",
+    "Surname": "Smith",
+    "BirthDate": "2024-05-23T20:39:46.529058+04:00",
+    "Email": "alice.smith@example.com",
+    "Password": "qwerty456"
+  }
+]

@@ -1,0 +1,52 @@
+﻿<Application x:Class="FinalProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FinalProject"
+             xmlns:viewModel="clr-namespace:FinalProject.MVVM.ViewModels"
+             xmlns:view="clr-namespace:FinalProject.MVVM.Views"
+             StartupUri="MVVM/Views/SignInPageView.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Templates/MenuButtonTemplate.xaml"/>
+                <ResourceDictionary Source="Templates/TextboxTemplate.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}" >
+                <view:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AllWorkersViewModel}" >
+                <view:AllWorkersView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:MyVacanciesViewModel}">
+                <view:MyVacanciesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AllVacanciesViewModel}">
+                <view:AllVacanciesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:CreateCVViewModel}">
+                <view:CreateCVView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EditProfileViewModel}">
+                <view:EditProfileView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:CreateVacancyViewModel}">
+                <view:CreateVacancyView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AllWorkersForAdminViewModel}">
+                <view:AllWorkersViewForAdmin/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AllVacanciesForAdminViewModel}">
+                <view:AllVacanciesViewForAdmin/>
+            </DataTemplate>
+
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

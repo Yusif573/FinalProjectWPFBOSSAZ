@@ -1,0 +1,69 @@
+﻿<Page x:Class="FinalProject.MVVM.Views.AdminWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:FinalProject.MVVM.ViewModels"
+        mc:Ignorable="d"
+
+        Title="AdminWindowView" Height="450" Width="800" Background="Transparent">
+
+    <Page.DataContext>
+        <viewModel:AdminWindowViewModel/>
+    </Page.DataContext>
+
+    <Border Background="#272537"
+        CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Border Width="140"
+                    Height="50"
+                    HorizontalAlignment="Left"
+                    Background="#844eff"
+                    CornerRadius="10"
+                    Margin="30,0,0,0">
+                <Button Foreground="White" Content="Vacancies" Background="Transparent" BorderBrush="Transparent" FontSize="18" 
+                        Command="{Binding DeleteVacancyAdminCommand}" />
+
+            </Border>
+
+            <Border Width="140"
+                    Height="50"
+                    HorizontalAlignment="Left"
+                    Background="#844eff"
+                    CornerRadius="10"
+                    Margin="330,0,0,0">
+                <Button Foreground="White" Content="Users" Background="Transparent" BorderBrush="Transparent" FontSize="18"
+                        Command="{Binding DeleteWorkerCommand}" />
+
+            </Border>
+
+
+
+
+            <Border Width="140"
+                    Height="50"
+                    HorizontalAlignment="Left"
+                    Background="#844eff"
+                    CornerRadius="10"
+                    Margin="630,0,0,0">
+                <Button Foreground="White" Content="Log out" Background="Transparent" BorderBrush="Transparent" FontSize="18" Click="Button_Click" />
+
+            </Border>
+
+
+
+
+
+            <ContentControl Grid.Row="1" 
+                        Margin="10"
+                        Content="{Binding CurrentView}"/>
+
+        </Grid>
+    </Border>
+</Page>

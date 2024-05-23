@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="FinalProject.MVVM.Views.AllVacanciesViewForAdmin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinalProject.DataBase"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="VacanciesSource" Source="{x:Static local:DataBaseClass.vacancies}"/>
+        <Style TargetType="GridViewColumnHeader">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <ListView Foreground="White" ItemsSource="{Binding Source={StaticResource VacanciesSource}}" SelectedItem="{Binding SelectedVacancy, Mode=TwoWay}" Name="VacanciesListView" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Employer name"  DisplayMemberBinding="{Binding NameOfEmployer}" />
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Salary" DisplayMemberBinding="{Binding Salary}"/>
+                    <GridViewColumn Header="Requirements" DisplayMemberBinding="{Binding Requirements}" />
+                    <GridViewColumn Header="Date time" DisplayMemberBinding="{Binding dateTime}" />
+                    <GridViewColumn Header="Content" DisplayMemberBinding="{Binding Content}" />
+                    <GridViewColumn Header="Delete">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="deleteVacancy" Content="Delete" Command="{Binding DataContext.DeleteVacancyCommand,RelativeSource={RelativeSource AncestorType=UserControl}}" CommandParameter="{Binding SelectedVacancy}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+[
+  {
+    "_id": 0,
+    "NameOfEmployer": "Ismayil",
+    "Name": "Software developer",
+    "Salary": 4000,
+    "Content": "5 days in a week and 8 hours of work",
+    "Requirements": "C# knowledge, WPF, SQL, HTML",
+    "dateTime": "2024-05-23T20:39:46.5525164+04:00"
+  },
+  {
+    "_id": 1,
+    "NameOfEmployer": "Michael",
+    "Name": "Data Analyst",
+    "Salary": 2500,
+    "Content": "4 days in a week and 7 hours of work",
+    "Requirements": "Data analysis, SQL, Python, Excel",
+    "dateTime": "2024-05-23T20:39:46.5526762+04:00"
+  },
+  {
+    "_id": 2,
+    "NameOfEmployer": "Emily",
+    "Name": "Web Designer",
+    "Salary": 2000,
+    "Content": "6 days in a week and flexible hours",
+    "Requirements": "HTML, CSS, JavaScript, Adobe Photoshop",
+    "dateTime": "2024-05-23T20:39:46.5526771+04:00"
+  }
+]

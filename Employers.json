@@ -1,0 +1,29 @@
+[
+  {
+    "City": "Baku",
+    "PhoneNumber": "508959446",
+    "Name": "Ismayil",
+    "Surname": "Seyidmammadli",
+    "BirthDate": "2024-05-23T20:39:46.5509256+04:00",
+    "Email": "isi@gmail.com",
+    "Password": "123321"
+  },
+  {
+    "City": "Baku",
+    "PhoneNumber": "508950046",
+    "Name": "Michael",
+    "Surname": "Brown",
+    "BirthDate": "2024-05-23T20:39:46.5510731+04:00",
+    "Email": "yusufov573@gmail.com",
+    "Password": "password456"
+  },
+  {
+    "City": "Baku",
+    "PhoneNumber": "558069446",
+    "Name": "Emily",
+    "Surname": "Johnson",
+    "BirthDate": "2024-05-23T20:39:46.5510741+04:00",
+    "Email": "emily.johnson@example.com",
+    "Password": "abc123"
+  }
+]
